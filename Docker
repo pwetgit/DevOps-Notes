@@ -53,3 +53,48 @@ docker rm -f web && docker volume rm monvolume
 
 # =======================================================================================
 # VARIABLES ENVIRONNEMENT
+
+# Passer une variable
+docker run -tid --name testenv --env MYVARIABLE="123456" ubuntu:latest
+docker exec -ti testenv sh
+$ env
+
+vim vars_env.lst
+MYPASSWORD="P@ssword"
+
+docker run -tid --name testenv --env-file vars_env.lst ubuntu:latest
+
+# Changer la variable hostname
+docker run -tid --name testenv --hostname ubcontainer ubuntu:latest
+
+# =======================================================================================
+# FICHIER DOCKERFILE
+
+vim Dockerfile
+
+FROM ubuntu:latest
+MAINTAINER pwet
+RUN apt-get update \
+&& apt-get install -y vim git \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+docker build -t monimage:v1.0 .
+
+docker image ls
+
+# permet de voir l'historique des commandes de l'image
+docker history monimage:v1.0
+
+docker run -tid --name ubtest monimage:v1.0
+docker exec -ti ubtest sh
+$ git
+
+# Suppression de l'image
+docker rmi monimage:v1.0
+
+# =======================================================================================
+# DOCKER LAYERS
+
+2 types de couches : ro et rw
+les couches peuvent etre partagées 
