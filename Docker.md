@@ -8,7 +8,7 @@
 # Adding Docker repository
 dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
-# Préparing and installing Docker
+# Preparing and installing Docker
 dnf remove podman buildah
 dnf install docker-ce docker-ce-cli containerd.io
 
