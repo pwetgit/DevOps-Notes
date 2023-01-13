@@ -17,7 +17,8 @@ systemctl start docker.service
 systemctl enable docker.service
 ```
 
-### run docker sans root
+Allow user to run docker command
+
 ```bash
 $ sudo usermod -aG docker $USER
 ```
