@@ -33,23 +33,24 @@ docker run -di (detach interactif) --name pwet alpine:latest
 docker exec -ti pwet sh
 ```
 
-# =======================================================================================
-# Lancement d'un conteneur NGINX
+## Lancement d'un conteneur (example with NGINX)
+```bash
 docker run -tid -p 8080:80 --name web nginx:latest
 se connecter sur navigateur 127.0.0.1:8080
 docker inspect web
     "IPAddress": "172.17.0.3"
-se connecter sur navigateaur 172.17.0.3:80
+se connecter sur navigateur 172.17.0.3:80
 
 docker start web
 docker stop web
 
 # Suppresion du conteneur
 docker rm -f web
+```
 
-# =======================================================================================
-# VOLUMES
+## VOLUMES
 
+```bash
 # Permet de remonter un répertoire pour la machine
 docker run -tid -p 8080:80 -v /srv/data/nginx:/usr/share/nginx/html --name web nginx:latest
 
@@ -63,10 +64,11 @@ docker run -tid --name web -p 8088:80 --mount source=monvolume,target=/usr/share
 # Suppresion d'un volume
 docker volume rm monvolume
 docker rm -f web && docker volume rm monvolume
+```
 
-# =======================================================================================
-# VARIABLES ENVIRONNEMENT
+## VARIABLES ENVIRONNEMENT
 
+```bash
 # Passer une variable
 docker run -tid --name testenv --env MYVARIABLE="123456" ubuntu:latest
 docker exec -ti testenv sh
@@ -79,10 +81,12 @@ docker run -tid --name testenv --env-file vars_env.lst ubuntu:latest
 
 # Changer la variable hostname
 docker run -tid --name testenv --hostname ubcontainer ubuntu:latest
+```
 
-# =======================================================================================
-# FICHIER DOCKERFILE
 
+## FICHIER DOCKERFILE
+
+```bash
 vim Dockerfile
 
 FROM ubuntu:latest
@@ -105,9 +109,9 @@ $ git
 
 # Suppression de l'image
 docker rmi monimage:v1.0
+```
 
-# =======================================================================================
-# DOCKER LAYERS
+## DOCKER LAYERS
 
 2 types de couches : ro et rw
-les couches peuvent etre partagées 
+les couches peuvent etre partagées
