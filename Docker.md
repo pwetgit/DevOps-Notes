@@ -12,10 +12,11 @@ systemctl enable docker.service
 ```bash
 $ sudo usermod -aG docker $USER
 ```
-# --> reboot
+### --> reboot
 
-# =======================================================================================
-# Useful commands
+
+## 🧑🏻‍💻 Useful commands
+```bash
 docker version
 docker -v
 docker info
@@ -25,6 +26,7 @@ docker run hello-world
 docker ps -a 
 docker run -di (detach interactif) --name pwet alpine:latest
 docker exec -ti pwet sh
+```
 
 # =======================================================================================
 # Lancement d'un conteneur NGINX
