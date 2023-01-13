@@ -14,6 +14,6 @@ A simple star to this project repo is enough to keep me motivated on this projec
 If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/pwetsama).
         
 ## 🙇 Author
-#### Mathias Gil
+#### pwet_-
 - Twitter: [@pwetsama](https://twitter.com/pwetsama)
 - Github: [@pwetgit](https://github.com/pwetgit)
