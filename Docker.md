@@ -2,7 +2,7 @@
 
 ## 🛠️ Installation  
 
-(RHEL/AlmaLinux)
+RHEL/AlmaLinux
 
 ```bash
 # Adding Docker repository
@@ -22,38 +22,49 @@ Allow user to run docker command
 ```bash
 $ sudo usermod -aG docker $USER
 ```
-### --> reboot
-
 
 ## 🧑🏻‍💻 Useful commands
 ```bash
+# Display docker version information
 docker version
 docker -v
 docker info
+
+# Search container
 docker search [name]
+
+# Get container
 docker pull hello-world     
 docker run hello-world
+
+# Show running containers
 docker ps -a 
-docker run -di (detach interactif) --name pwet alpine:latest
+
+# run specific container (detach interactive mode)
+docker run -di --name pwet alpine:latest
+
 docker exec -ti pwet sh
 ```
 
-## Lancement d'un conteneur (example with NGINX)
+## Running containers (example with NGINX)
 ```bash
 docker run -tid -p 8080:80 --name web nginx:latest
-se connecter sur navigateur 127.0.0.1:8080
+
+--> Connect via web browser 127.0.0.1:8080
+
 docker inspect web
     "IPAddress": "172.17.0.3"
-se connecter sur navigateur 172.17.0.3:80
+--> Connect via web browser 172.17.0.3:80
 
+# Start/Stop container
 docker start web
 docker stop web
 
-# Suppresion du conteneur
+# Remove container
 docker rm -f web
 ```
 
-## VOLUMES
+## Volumes
 
 ```bash
 # Permet de remonter un répertoire pour la machine
@@ -71,7 +82,7 @@ docker volume rm monvolume
 docker rm -f web && docker volume rm monvolume
 ```
 
-## VARIABLES ENVIRONNEMENT
+## Environment variables
 
 ```bash
 # Passer une variable
@@ -88,7 +99,7 @@ docker run -tid --name testenv --env-file vars_env.lst ubuntu:latest
 docker run -tid --name testenv --hostname ubcontainer ubuntu:latest
 ```
 
-## FICHIER DOCKERFILE
+## Dockerfile
 
 ```bash
 vim Dockerfile
@@ -115,7 +126,7 @@ $ git
 docker rmi monimage:v1.0
 ```
 
-## DOCKER LAYERS
+## Docker layers
 
 2 types de couches : ro et rw
 les couches peuvent etre partagées
