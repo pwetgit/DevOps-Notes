@@ -50,11 +50,11 @@ docker exec -ti pwet sh
 ```bash
 docker run -tid -p 8080:80 --name web nginx:latest
 
---> Connect via web browser 127.0.0.1:8080
+# --> Connect via web browser 127.0.0.1:8080
 
 docker inspect web
     "IPAddress": "172.17.0.3"
---> Connect via web browser 172.17.0.3:80
+# --> Connect via web browser 172.17.0.3:80
 
 # Start/Stop container
 docker start web
@@ -70,7 +70,7 @@ docker rm -f web
 # Permet de remonter un répertoire pour la machine
 docker run -tid -p 8080:80 -v /srv/data/nginx:/usr/share/nginx/html --name web nginx:latest
 
-# Création d'un volume
+# Managing volume
 docker volume ls
 docker volume create monvolume
 docker volume inspect monvolume
