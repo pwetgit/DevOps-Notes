@@ -1,3 +1,4 @@
+![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/langfr-290px-Docker_%28container_engine%29_logo.svg.png)
 
 ## 🛠️ INSTALLATION (AlmaLinux)    
 ```bash
@@ -82,7 +83,6 @@ docker run -tid --name testenv --env-file vars_env.lst ubuntu:latest
 # Changer la variable hostname
 docker run -tid --name testenv --hostname ubcontainer ubuntu:latest
 ```
-
 
 ## FICHIER DOCKERFILE
 
