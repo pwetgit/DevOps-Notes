@@ -3,7 +3,7 @@
 
 ## 🧑🏻‍💻 Useful commands
 ```bash
-# Display docker version information
+# Configuration
 git clone git@github.com:nomduGituser/repo.git
 cd repo.git
 git config --global user.name “Jean Git”
