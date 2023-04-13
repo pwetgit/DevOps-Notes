@@ -1,4 +1,4 @@
-![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1920px-Git-logo.svg.png)
+![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/320px-Git-logo.svg.png)
 
 
 ## 🧑🏻‍💻 Useful commands
