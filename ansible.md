@@ -29,6 +29,9 @@ ansible-galaxy search crontab
 
 # récupérer les facts
 ansible localhost -m setup | grep distribution
+
+# Lister les tags presents
+ansible-playbook --list-tags playbook.yml
 ```
 
 https://www.redhat.com/sysadmin/faster-ansible-playbook-execution
