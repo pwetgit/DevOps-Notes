@@ -32,6 +32,9 @@ ansible localhost -m setup | grep distribution
 
 # Lister les tags presents
 ansible-playbook --list-tags playbook.yml
+
+# Crypter les fichiers sensibles
+ansible-vault encrypt secure.yml
 ```
 
 https://www.redhat.com/sysadmin/faster-ansible-playbook-execution
