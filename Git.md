@@ -17,11 +17,10 @@ git status
 git commit -m “updated readme file, initial commit”
 git push origin master
 
-
-# show all branch
+# Show all branch
 git branch -a 
 
-# delete remote branch
+# Delete remote branch
 git push origin -d <branch_name>
 
 # Renaming a remote Git branch
