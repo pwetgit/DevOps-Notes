@@ -37,13 +37,27 @@ docker search [name]
 docker pull hello-world     
 docker run hello-world
 
+# List images
+docker image ls [OPTIONS] [REPOSITORY[:TAG]]
+
 # Show running containers
 docker ps -a 
 
 # run specific container (detach interactive mode)
-docker run -di --name pwet alpine:latest
+docker run -di --name container_name alpine:latest
 
-docker exec -ti pwet sh
+# run specific command inside a container 
+docker exec -ti container_name sh
+
+# remove exited containers
+docker rm $(docker ps -a -f status=exited -f status=created -q)
+
+# Remove one or more images
+docker rmi [OPTIONS] IMAGE [IMAGE...]
+
+# Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
+docker system prune
+
 ```
 
 ## Running containers (example with NGINX)
