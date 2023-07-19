@@ -58,6 +58,9 @@ docker rmi [OPTIONS] IMAGE [IMAGE...]
 # Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
 docker system prune
 
+# Remove all unused images not just dangling ones
+docker system prune -a
+
 ```
 
 ## Running containers (example with NGINX)
