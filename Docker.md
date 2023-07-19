@@ -31,7 +31,7 @@ docker -v
 docker info
 
 # Search container
-docker search [name]
+docker search [NAME]
 
 # Get container
 docker pull hello-world     
