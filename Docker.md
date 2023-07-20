@@ -61,6 +61,9 @@ docker system prune
 # Remove all unused images not just dangling ones
 docker system prune -a
 
+# Manage reflog information
+git-reflog
+
 ```
 
 ## Running containers (example with NGINX)
