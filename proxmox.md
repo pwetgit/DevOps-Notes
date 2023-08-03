@@ -43,6 +43,9 @@ qm set ${ID_VM} --boot c --bootdisk scsi0
 # Add serial console
 qm set ${ID_VM} --serial0 socket --vga serial0
 
+# Configure Cloud-Init Drive parameters (GUI) and Transform VM to Template
+qm template ${ID-VM}
+
 ```
 
 ### Passing a Physical Drive through to a VM in ProxMox
