@@ -29,4 +29,7 @@ git push origin --delete old-name
 git push origin -u new-name
 perform a reset of the upstream branch
 
+# Remove/restore file from previous/specific commit
+git checkout commit_hash file
+
 ```
