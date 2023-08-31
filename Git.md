@@ -21,6 +21,9 @@ git push origin master
 # Show all branch
 git branch -a 
 
+# Show remote branch
+gir branch -r
+
 # Delete remote branch
 git push origin -d <branch_name>
 
