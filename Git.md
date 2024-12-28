@@ -1,7 +1,7 @@
 ![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/320px-Git-logo.svg.png)
 
 
-## 🧑🏻‍💻 Useful commands
+## 🧑🏻‍💻 Useful Git commands
 ```bash
 
 # Configuration
