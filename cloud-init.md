@@ -44,3 +44,13 @@ qm template 1000
 qm clone 1000 202 --name ubuntu01 --full
 
 ```
+
+
+```bash
+/var/lib/vz/snippets/qemu-guest-agent.yml
+#cloud-config
+runcmd:
+  - apt update
+  - apt install -y qemu-guest-agent
+  - systemctl start qemu-guest-agent
+```
