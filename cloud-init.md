@@ -41,7 +41,7 @@ qm set 1000 --serial0 socket --vga serial0
 qm template 1000
 
 # Clone template
-qm clone 1000 202 --name ubuntu01 --full
+qm clone 1000 201 --name ubuntu01 --full
 
 ```
 
