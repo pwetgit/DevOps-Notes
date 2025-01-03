@@ -35,7 +35,7 @@ qm importdisk ${ID_VM} lunar-server-cloudimg-amd64.img local-lvm
 qm set ${ID_VM} --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-${ID_VM}-disk-0
 
 # Add cloud init drive
-qm set ${ID_VM} --ide2 local-lvm:cloudinit
+qm set ${ID_VM} --ide1 local-lvm:cloudinit
 
 # Make the cloud init drive bootable and restrict BIOS to boot from disk only
 qm set ${ID_VM} --boot c --bootdisk scsi0
