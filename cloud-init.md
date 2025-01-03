@@ -13,7 +13,7 @@ virt-customize -a lunar-server-cloudimg-amd64.img --run-command "sed -i 's/.*Pas
 
 
 # Create a new virtual machine
-qm create 1000 --memory 4096 --core 4 --name cloud-ubuntu-lunar --net0 virtio,bridge=vmbr0
+qm create 1000 --memory 2048 --core 2 --name cloud-ubuntu-lunar --net0 virtio,bridge=vmbr0
 
 # Import the downloaded Ubuntu disk to local-lvm storage
 qm importdisk 1000 lunar-server-cloudimg-amd64.img local-lvm
@@ -22,10 +22,10 @@ qm importdisk 1000 lunar-server-cloudimg-amd64.img local-lvm
 qm set 1000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-1000-disk-0
 
 # Resize the new disk
-qm resize 1000 scsi0 +96.5G
+qm resize 1000 scsi0 +28.5G
 
 # Add cloud init drive
-qm set 1000 --ide2 local-lvm:cloudinit
+qm set 1000 --ide1 local-lvm:cloudinit
 
 # Make the cloud init drive bootable and restrict BIOS to boot from disk only
 qm set 1000 --boot c --bootdisk scsi0
