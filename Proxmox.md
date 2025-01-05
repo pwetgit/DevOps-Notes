@@ -24,6 +24,7 @@ cd /var/lib/vz/template/iso
 wget https://cloud-images.ubuntu.com/lunar/current/lunar-server-cloudimg-amd64.img
 
 ID_VM=1000
+STORAGE=local-lvm
 
 # Create a new virtual machine
 qm create ${ID_VM} --memory 2048 --core 2 --name ubuntu-cloud --net0 virtio,bridge=vmbr0

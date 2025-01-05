@@ -2,17 +2,32 @@
 
 ## 🛠️ Installation  
 
-RHEL/AlmaLinux
+#### RHEL/AlmaLinux
 
 ```bash
+# Update the System
+dnf update
+
 # Adding Docker repository
 dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 # Preparing and installing Docker
 dnf remove podman buildah
 dnf install docker-ce docker-ce-cli containerd.io
+```
+#### Ubuntu/Debian
 
-# Enabling Docker service
+```bash
+# Update the System
+sudo apt update && sudo apt upgrade
+
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+##### Enabling Docker service
+```bash
 systemctl start docker.service
 systemctl enable docker.service
 ```
@@ -20,8 +35,9 @@ systemctl enable docker.service
 Allow user to run docker command
 
 ```bash
-$ sudo usermod -aG docker $USER
+sudo usermod -aG docker $USER
 ```
+
 
 ## 🧑🏻‍💻 Useful commands
 ```bash
@@ -150,3 +166,10 @@ docker rmi monimage:v1.0
 
 2 types de couches : ro et rw
 les couches peuvent etre partagées
+
+
+## Inside container 
+```bash
+# Check IP address
+curl ifconfig.io
+```

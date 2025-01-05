@@ -2,12 +2,18 @@
 
 
 ## 🧑🏻‍💻 Github Actions
+
+#### Install Runner as service
 ```bash
-
-# Install Runner as service
 sudo ./svc.sh install
-sudo ./svc.sh start
+```
 
-# Uninstall Runner service
+#### Start Runner service
+```bash
+sudo ./svc.sh start
+```
+
+#### Uninstall Runner service
+```bash
 sudo ./svc.sh uninstall
 ```
