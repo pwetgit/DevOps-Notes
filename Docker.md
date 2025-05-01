@@ -116,7 +116,11 @@ docker run -tid --name web -p 8088:80 --mount source=monvolume,target=/usr/share
 # Suppresion d'un volume
 docker volume rm monvolume
 docker rm -f web && docker volume rm monvolume
-```
+
+
+# Renommer un volume
+docker volume create --name new_volume && docker run --rm -it -v old_volume:/from -v new_volume:/to alpine ash -c 'cd /from ; cp -av . /to' && docker volume rm old_volume
+ ```
 
 ## Environment variables
 
