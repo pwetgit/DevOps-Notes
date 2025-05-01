@@ -1,5 +1,16 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png?20180925041558" alt="Pi-hole" width="100"/>
 
+# Install Pi-hole
+```bash
+curl -sSL https://install.pi-hole.net | bash
+```
+
+### Install unbound
+```bash
+vim /etc/unbound/unbound.conf.d/pi-hole.conf
+```
+
+
 # Pi-hole Useful Commands
 
 ### 🔄 Update Pi-hole
@@ -20,16 +31,6 @@ If there are issues with DNS, go to:
 Settings > System > Restart DNS Resolver
 ```
 
-### ⏸️ Enable/Disable Pi-hole
-To disable Pi-hole for a specified amount of time (e.g., 5 minutes):
-```bash
-pihole disable 5m
-```
-To re-enable Pi-hole:
-```bash
-pihole enable
-```
-
 ### 📊 Check Pi-hole Status
 To check the status of Pi-hole:
 ```bash
@@ -40,18 +41,6 @@ pihole status
 To view the real-time log of DNS queries:
 ```bash
 pihole -t
-```
-
-### 🚫 Display Top Blocked Domains
-To display the top blocked domains:
-```bash
-pihole -t
-```
-
-### 🗑️ Flush Pi-hole Logs
-To flush the Pi-hole log file:
-```bash
-pihole flush
 ```
 
 ##### 📥 Update Gravity
@@ -89,4 +78,8 @@ dhcp-option=option:dns-server,192.168.1.254,1.1.1.1
 sudo systemctl restart pihole-FTL
 ```
 **Warning:** ANY CHANGES MADE TO THIS FILE WILL BE LOST ON SAVING DHCP VIA GUI
+
+
+
+
 
