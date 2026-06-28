@@ -139,9 +139,25 @@ nano /etc/hosts
 # Restart the network service
 systemctl restart networking
 ```
+## 📥 Install VirtIO Drivers for Windows
+For Windows VMs, install VirtIO drivers in the guest machine beforehand:
+[Proxmox VirtIO Drivers](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers)
 
 ---
 
 ## 📥 Install VirtIO Drivers for Windows
 For Windows VMs, install VirtIO drivers in the guest machine beforehand:
 [Proxmox VirtIO Drivers](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers)
+
+---
+
+## 🌐 Proxmox Clustering
+If using 2 nodes in cluster, and one node is down, you cannot do anything.
+Check cluster Status
+```bash
+pvecm status
+```
+Set quorum expected node to 1
+```bash
+pvecm expected 1
+```
